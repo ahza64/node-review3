@@ -13,6 +13,15 @@ app.get("/api", (req, res) => {
   res.json({ message: "Hello from server!" });
 });
 
+app.get("/users", (req, res) => {
+  res.json(users);
+});
+
+let users = [
+  { name: "john" },
+  { name: "henery" }
+]
+
 // All other GET requests not handled before will return our React app
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
