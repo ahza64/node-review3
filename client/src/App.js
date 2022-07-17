@@ -1,14 +1,14 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const [data, setData] = React.useState(null);
+  const [data, setData] = useState(null);
 
-  React.useEffect(() => {
-    fetch("/api")
+  useEffect(() => {
+    fetch("/team_members", { method: 'GET' })
       .then((res) => res.json())
-      .then((data) => setData(data.message));
+      .then((data) => setData(data.length));
   }, []);
 
   return (
