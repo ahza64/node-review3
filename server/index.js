@@ -48,7 +48,7 @@ app.get("/jobs", (req, res) => {
 });
 
 app.post("/job/:id", (req, res) => {
-  // res.status(200)
+  res.sendStatus(200)
 });
 
 // All other GET requests not handled before will return our React app
